@@ -1,0 +1,13 @@
+version: "3"
+services:
+  node:
+    build:
+      context: ../
+      dockerfile: ./docker/images/Dockerfile
+    volumes:
+      - './:/app'
+    environment:
+      - NODE_ENV=${NODE_ENV}
+    ports:
+      - "3000:3000"
+    command: "yarn start"
